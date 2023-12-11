@@ -44,3 +44,9 @@ const server = app.listen(port, listening);
 function listening() {
     console.log(`Server starts on port ${port}`);
 }
+
+function closeServer() {
+    // implement how your server is closed
+  }
+  
+module.exports = { closeServer, app , server};
