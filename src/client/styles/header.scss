@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 40px;
+    box-shadow: 0 0.8rem 2rem rgba(0,0,0,.1);
+    padding: 20px;
+
+    .logo{
+        font-size: 4rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+        font-size: 30px;
+        font-weight: 300;
+        &:hover{
+            border-bottom: 3px solid #ff494a;
+        }
+    }
+    
+    .nav-links{
+        ul{
+            display: flex;
+            
+            li{
+                padding: 0 20px;
+            }
+        }
+    }
+}
+

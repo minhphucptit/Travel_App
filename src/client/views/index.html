@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CapStone Travel App</title>
+  </head>
+  <body>
+    <section class="container">
+      <form action="" method="post">
+        <h3>CapStone Travel App</h3>
+        <fieldset>
+          <input type="text" placeholder="From" name="fromPlace" required />
+        </fieldset>
+        <fieldset>
+          <input type="text" placeholder="To" name="toPlace" required />
+        </fieldset>
+        <fieldset>
+          <label for="date">Date: </label>
+          <input type="date" name="date" />
+        </fieldset>
+        <fieldset>
+          <button
+            name="submit"
+            type="submit"
+            id="contact-submit"
+            data-submit="...Sending"
+          >
+            Submit
+          </button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="result-section" class="hidden">
+      <div class="result-container">
+        <div class="result-left">
+          <img id="destination-img" src="#" alt="destination-img" />
+        </div>
+        <div class="result-right">
+          <h2 class="destination-text">
+            Destination:
+            <span id="city" class="result-underline">New York</span>
+          </h2>
+          <h2 class="destination-date">
+            Departing on:
+            <span id="date" class="result-underline">DD/MM/YYYY</span>
+          </h2>
+          <h2 class="destination-countdown">
+            This trip is
+            <span id="days-left" class="result-underline">32</span>
+            days away
+          </h2>
+          <h2 class="local-weather">
+            Local weather is:
+            <span id="destination-weather" class="result-underline">54</span>
+            &#176; F
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
