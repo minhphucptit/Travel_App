@@ -3,7 +3,7 @@ function checkInput(originValue, destinationValue){
     if (urlRGEX.test(originValue) && urlRGEX.test(destinationValue)) {
       return
     } else {
-      alert("Please enter a valid place");
+      alert("Please enter a valid place!");
     } 
 }
 

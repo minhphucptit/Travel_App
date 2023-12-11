@@ -6,9 +6,11 @@ body {
     overflow-x: hidden;
 }
 
+
 section {
     margin: 50px auto;
 }
+
 
 #about{
     display: flex;
@@ -69,6 +71,7 @@ section {
     }
 }
 
+
 #form-section{
     background-color: #ff494a;
     background: #ff494a;
@@ -117,6 +120,7 @@ section {
         }
     }
 }
+
 #result-section{
     display: flex;
     justify-content: center;
@@ -174,9 +178,11 @@ section {
     }
 }
 
+
 .hidden{
     display: none !important;
 }
+
 .active-result{
     display: block !important;
 }

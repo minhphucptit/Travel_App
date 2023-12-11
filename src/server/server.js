@@ -1,40 +1,46 @@
-let path = require('path')
-let express = require('express');
-let app = express();
-let bodyParser = require('body-parser')
+// Import necessary modules
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
-let projectData = {};
+// Initialize Express application
+const app = express();
 
-app.use(cors())
-
-app.use(bodyParser.json()) 
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
-
+// Configure middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('dist'));
 
-//Get route
-app.get('/', function(req, res){
-    res.sendFile('dist/index.html');
+// Get route
+app.get('/', function (req, res) {
+    // Serve the main HTML file
+    res.sendFile(path.resolve('dist/index.html'));
 });
 
 // Post route
-app.post('/add', postInfo );
+app.post('/add', postInfo);
 
-function postInfo(req,res){
+function postInfo(req, res) {
+    // Store data from the request in projectData
     projectData['depCity'] = req.body.depCity;
     projectData['arrCity'] = req.body.arrCity;
     projectData['depDate'] = req.body.depDate;
     projectData['weather'] = req.body.weather;
     projectData['daysLeft'] = req.body.daysLeft;
+
+    // Send the updated projectData in the response
     res.send(projectData);
 }
 
+// Set the port for the server
 const port = 8080;
+
+// Start the server
 const server = app.listen(port, listening);
 
-function listening(){
+// Callback function when the server starts
+function listening() {
     console.log(`Server starts on port ${port}`);
 }
